@@ -1,4 +1,4 @@
-export function PostsIndex({ posts }) {
+export function PostsIndex({ posts, onShow }) {
   return (
     <div>
       <h1>All Posts</h1>
@@ -7,6 +7,7 @@ export function PostsIndex({ posts }) {
           <h2>{post.title}</h2>
           <text>{post.body}</text>
           <img src={post.image} />
+          <button onClick={() => onShow(post)}>Expand</button>
         </div>
       ))}
     </div>
