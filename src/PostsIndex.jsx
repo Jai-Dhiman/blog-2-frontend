@@ -5,8 +5,8 @@ export function PostsIndex({ posts, onShow }) {
       {posts.map((post) => (
         <div key={post.id}>
           <h2>{post.title}</h2>
-          <text>{post.body}</text>
-          <img src={post.image} />
+          <p>{post.body}</p>
+          <img src={post.image} alt={post.id} />
           <button onClick={() => onShow(post)}>Expand</button>
         </div>
       ))}

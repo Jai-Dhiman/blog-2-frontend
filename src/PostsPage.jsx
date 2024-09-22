@@ -20,16 +20,16 @@ export function PostsPage() {
 
   const handleCreate = (params, successCallback) => {
     console.log("handleCreate", params);
-    axios.post("http://localhost:3000/photos.json", params).then((response) => {
+    axios.post("http://localhost:3000/posts.json", params).then((response) => {
       setPosts([...posts, response.data]);
       successCallback();
     });
   };
 
-  const handleShow = (photo) => {
-    console.log("handleShow", photo);
+  const handleShow = (post) => {
+    console.log("handleShow", post);
     setIsPostsShowVisible(true);
-    setCurrentPost(photo);
+    setCurrentPost(post);
   };
 
   const handleClose = () => {

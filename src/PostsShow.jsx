@@ -1,9 +1,9 @@
-export function PhotosShow({ post }) {
+export function PostsShow({ post }) {
   return (
     <div>
-      <p>{post.title}</p>
+      <h2>{post.title}</h2>
       <p>{post.body}</p>
-      <p>{post.image}</p>
+      <img src={post.image} />
     </div>
   );
 }

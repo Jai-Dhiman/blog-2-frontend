@@ -1,4 +1,4 @@
-export function PhotosNew({ onCreate }) {
+export function PostsNew({ onCreate }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     const params = new FormData(event.target);
