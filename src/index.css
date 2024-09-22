@@ -1,3 +1,127 @@
 html {
   scroll-behavior: smooth;
 }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Limit the photo size */
+.post-image {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Modal styles */
+.modal-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-main {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 80%;
+  max-height: 80%;
+  overflow-y: auto;
+}
+
+/* Limit image size in modal */
+.modal-main .post-image {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Prevent scrolling on the background when modal is open */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* Button styles */
+button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Close button for modal */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  background: none;
+  border: none;
+  color: #333;
+}
+
+/* General layout */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Posts list */
+.posts-list {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+}
+
+/* Two-column layout for larger screens */
+@media (min-width: 768px) {
+  .posts-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.post-item {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+/* New Post form styles */
+.new-post-form {
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.new-post-form h1 {
+  margin-top: 0;
+}
+
+.new-post-form form {
+  display: grid;
+  gap: 10px;
+}
+
+.new-post-form input[type="text"],
+.new-post-form textarea {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}

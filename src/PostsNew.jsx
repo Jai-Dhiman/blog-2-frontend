@@ -6,19 +6,22 @@ export function PostsNew({ onCreate }) {
   };
 
   return (
-    <div>
-      <h1>New Photo</h1>
+    <div className="new-post-form">
+      <h1>New Post</h1>
       <form onSubmit={handleSubmit}>
         <div>
-          Title: <input name="title" type="text" />
+          <label htmlFor="title">Title:</label>
+          <input id="title" name="title" type="text" required />
         </div>
         <div>
-          Body: <input name="body" type="text" />
+          <label htmlFor="body">Body:</label>
+          <textarea id="body" name="body" required></textarea>
         </div>
         <div>
-          Image: <input name="image" type="text" />
+          <label htmlFor="image">Image URL:</label>
+          <input id="image" name="image" type="text" />
         </div>
-        <button type="submit">Post</button>
+        <button type="submit">Create Post</button>
       </form>
     </div>
   );
