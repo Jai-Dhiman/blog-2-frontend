@@ -4,6 +4,7 @@ import { PostsShow } from "./PostsShow";
 import { Modal } from "./Modal";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { useMemo } from "react";
 
 export function PostsPage() {
   const [posts, setPosts] = useState([]);
@@ -37,12 +38,15 @@ export function PostsPage() {
     setIsPostsShowVisible(false);
   };
 
+  const sortedPosts = useMemo(() => {
+    return [...posts].sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+  }, [posts]);
   useEffect(handleIndex, []);
 
   return (
     <main>
       <PostsNew onCreate={handleCreate} />
-      <PostsIndex posts={posts} onShow={handleShow} />
+      <PostsIndex posts={sortedPosts} onShow={handleShow} />
       <Modal show={isPostsShowVisible} onClose={handleClose}>
         <PostsShow post={currentPost} />
       </Modal>

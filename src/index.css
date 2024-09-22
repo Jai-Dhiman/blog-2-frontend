@@ -51,7 +51,7 @@ body.modal-open {
 /* Button styles */
 button {
   padding: 5px 10px;
-  background-color: #007bff;
+  background-color: #3ca168;
   color: white;
   border: none;
   border-radius: 3px;
@@ -59,7 +59,7 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #008e2b;
 }
 
 /* Close button for modal */
@@ -124,4 +124,51 @@ main {
   padding: 5px;
   border: 1px solid #ddd;
   border-radius: 3px;
+}
+
+/* Header styles */
+.main-header {
+  background-color: #3ca168;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.main-header nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-header nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  padding: 0 1rem;
+}
+
+.main-header nav a:hover {
+  color: #000000;
+}
+
+/* Style for the separators */
+.main-header nav {
+  font-size: 1.2rem;
+}
+
+
+/* Adjust main content to account for sticky header */
+main {
+  padding-top: 70px;
+}
+
+/* Add IDs to the sections for navigation */
+#new-post {
+  scroll-margin-top: 70px;
+}
+
+#all-posts {
+  scroll-margin-top: 70px;
 }
